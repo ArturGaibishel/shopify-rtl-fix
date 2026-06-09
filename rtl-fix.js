@@ -61,19 +61,6 @@
       'word-break: break-word !important;',
     '}',
 
-    /* Fix button alignment in RTL sections */
-    '.shopify-section .button, .shopify-section a.button,',
-    '.shopify-section [class*="button"]:not(#a11y-widget-root *),',
-    '.shopify-section [class*="btn"]:not(#a11y-widget-root *) {',
-      'margin-left: 0 !important;',
-      'margin-right: 0 !important;',
-      'display: inline-block !important;',
-      'max-width: 100% !important;',
-      'box-sizing: border-box !important;',
-    '}',
-
-    /* Section content containers — prevent horizontal overflow */
-    '.shopify-section { overflow-x: hidden; }',
 
 
     /* ── Payment icons container ──────────────────────────── */
