@@ -78,6 +78,16 @@
       'word-break: break-word !important;',
     '}',
 
+    /* Footer newsletter — align right */
+    '.footer-block__newsletter, [class*="newsletter"], .footer [class*="newsletter"] {',
+      'text-align: right !important;',
+      'direction: rtl !important;',
+    '}',
+    '.footer-block__newsletter p, .footer-block__newsletter h2,',
+    '.footer-block__newsletter label, .footer-block__newsletter span {',
+      'text-align: right !important;',
+    '}',
+
 
 
     /* ── Payment icons container ──────────────────────────── */
