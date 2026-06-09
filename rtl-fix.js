@@ -189,6 +189,32 @@
   // ============================================================
   // INIT
   // ============================================================
+  function fixButtons() {
+    var sels = [
+      '.product-form__submit',
+      'button[name="add"]',
+      '.shopify-payment-button__button',
+      '[class*="payment-button"] button',
+      '[class*="checkout-button"]',
+    ];
+    sels.forEach(function(sel) {
+      document.querySelectorAll(sel).forEach(function(el) {
+        el.style.setProperty('text-align', 'center', 'important');
+        el.style.setProperty('justify-content', 'center', 'important');
+      });
+    });
+
+    /* נסה גם בתוך iframes של שופיפיי */
+    document.querySelectorAll('iframe').forEach(function(iframe) {
+      try {
+        var doc = iframe.contentDocument || iframe.contentWindow.document;
+        var s = doc.createElement('style');
+        s.textContent = 'button,a{text-align:center!important;justify-content:center!important;}';
+        doc.head.appendChild(s);
+      } catch(e) {}
+    });
+  }
+
   function init() {
     var style = document.createElement('style');
     style.id = 'luna-rtl-css';
@@ -196,6 +222,14 @@
     document.head.appendChild(style);
 
     injectPaymentIcons();
+    fixButtons();
+
+    /* הפעל שוב אחרי שהדף נטען לגמרי */
+    window.addEventListener('load', fixButtons);
+
+    /* עקוב אחרי אלמנטים חדשים (כמו כפתורי תשלום דינמיים) */
+    var observer = new MutationObserver(function() { fixButtons(); });
+    observer.observe(document.body, { childList: true, subtree: true });
   }
 
   if (document.readyState === 'loading') {
