@@ -75,6 +75,23 @@
     /* Section content containers — prevent horizontal overflow */
     '.shopify-section { overflow-x: hidden; }',
 
+    /* Mobile menu — fix RTL (slide from right instead of left) */
+    '.menu-drawer {',
+      'left: auto !important;',
+      'right: 0 !important;',
+    '}',
+    '.menu-drawer.animate--slide-in {',
+      'transform: translateX(0) !important;',
+    '}',
+    '.menu-drawer:not(.is-open):not(.animate--slide-in) {',
+      'transform: translateX(100%) !important;',
+    '}',
+    /* Mobile nav overlay */
+    '[class*="mobile-nav"], [class*="mobile-menu"], [class*="nav-drawer"] {',
+      'left: auto !important;',
+      'right: 0 !important;',
+    '}',
+
     /* ── Payment icons container ──────────────────────────── */
     '#luna-payment-icons {',
       'display: flex;',
