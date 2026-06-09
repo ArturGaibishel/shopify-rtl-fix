@@ -45,6 +45,22 @@
     /* Pagination */
     '.pagination { direction: rtl; }',
 
+    /* Brand information footer section — fix overflow */
+    '.footer__brand, [class*="brand-information"], [class*="brand_information"],',
+    '.footer [class*="brand"], .shopify-section [class*="brand"] {',
+      'overflow: visible !important;',
+      'text-align: right !important;',
+      'word-break: break-word !important;',
+      'width: 100% !important;',
+      'max-width: 100% !important;',
+    '}',
+
+    /* Footer columns — fix width */
+    '.footer__blocks, .footer__inner, .footer-block__details {',
+      'overflow: visible !important;',
+      'word-break: break-word !important;',
+    '}',
+
     /* ── Payment icons container ──────────────────────────── */
     '#luna-payment-icons {',
       'display: flex;',
