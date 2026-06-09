@@ -11,21 +11,29 @@
   // ============================================================
   var STYLES = [
 
-    /* Hebrew font — Heebo from Google Fonts */
-    '@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap");',
+    /* Hebrew font — Rubik from Google Fonts */
+    '@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap");',
 
-    /* RTL base */
+    /* RTL base — direction only, לא נגע ב-text-align */
     'html { direction: rtl !important; }',
-    'body { direction: rtl !important; font-family: "Heebo", Arial, sans-serif !important; }',
+    'body { direction: rtl !important; font-family: "Rubik", Arial, sans-serif !important; }',
 
-    /* Text alignment */
-    'p, h1, h2, h3, h4, h5, h6, li, td, th, label, span, div { text-align: right; }',
+    /* Font only — לא text-align */
+    'p, h1, h2, h3, h4, h5, h6, li, td, th, label, input, textarea, select, button {',
+      'font-family: "Rubik", Arial, sans-serif !important;',
+    '}',
 
-    /* Inputs & forms */
+    /* Inputs */
     'input, textarea, select {',
       'direction: rtl !important;',
-      'text-align: right !important;',
-      'font-family: "Heebo", Arial, sans-serif !important;',
+      'font-family: "Rubik", Arial, sans-serif !important;',
+    '}',
+
+    /* סליידרים — תמיד LTR כדי שלא יתהפכו */
+    '.slideshow, .slider, [class*="slider"], [class*="slideshow"],',
+    '.swiper, .swiper-wrapper, .flickity-viewport,',
+    '.product-media-container, .product__media-list {',
+      'direction: ltr !important;',
     '}',
 
     /* Fix Shopify breadcrumbs */
@@ -33,12 +41,6 @@
 
     /* Fix Shopify cart */
     '.cart__item, .cart-item { direction: rtl; }',
-
-    /* Fix flex rows that assume LTR */
-    '.header__inline-menu, .list-menu--inline { flex-direction: row-reverse; }',
-
-    /* Fix icon+text pairs */
-    '.icon-with-text { flex-direction: row-reverse; }',
 
     /* Pagination */
     '.pagination { direction: rtl; }',
