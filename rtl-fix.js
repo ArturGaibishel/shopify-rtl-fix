@@ -45,6 +45,19 @@
     /* Pagination */
     '.pagination { direction: rtl; }',
 
+    /* Product page — fix spacing between image and text */
+    '.product__info-wrapper { padding-right: 2rem !important; padding-left: 1rem !important; }',
+    '.product__media-wrapper { padding-left: 2rem !important; padding-right: 1rem !important; }',
+    '.product .grid--gapless { gap: 2rem !important; }',
+
+    /* Buttons — center text */
+    '.product-form__submit,',
+    'button[name="add"],',
+    '.shopify-payment-button__button,',
+    '[class*="payment-button"] {',
+      'text-align: center !important;',
+    '}',
+
     /* Brand information footer section — fix overflow */
     '.footer__brand, [class*="brand-information"], [class*="brand_information"],',
     '.footer [class*="brand"], .shopify-section [class*="brand"] {',
