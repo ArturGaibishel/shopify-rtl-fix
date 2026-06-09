@@ -54,8 +54,12 @@
     '.product-form__submit,',
     'button[name="add"],',
     '.shopify-payment-button__button,',
-    '[class*="payment-button"] {',
+    '.shopify-payment-button button,',
+    '[class*="payment-button"],',
+    '[class*="checkout-button"],',
+    'button.product-form__submit {',
       'text-align: center !important;',
+      'justify-content: center !important;',
     '}',
 
     /* Brand information footer section — fix overflow */
